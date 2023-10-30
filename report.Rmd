@@ -1,6 +1,6 @@
 ---
-title: "Untitled"
-author: "Chatpisut Makornkhan & Gui Gao (32723237)"
+title: "Social Media Analysis on Relationship of Facebook and Instagram Post-Comments"
+author: "Chatpisut Makornkhan (32580231) & Gui Gao (32723237)"
 date: "2023-10-28"
 output:
   bookdown::pdf_document2:
@@ -23,9 +23,40 @@ library(tinytex)
 
 # Background and Motivation
 
+Enabling online connections and communications between people globally would be an understatement for social media, as it has shaped both professional and personal lives with immense impacts beyond mere people interactions. It has been gradually yet significantly evolving individuals’ news consumption, media and entertainment, and especially product and service consumption behavior. In 2022, internet users aged between 16 to 64 years old spend approximately 2 hours and 30 minutes daily on social media, with an upward trajectory of 2 percent at the start of 2023 (Kemp, 2023). These facts encourage firms to discover relationships and engagements between firms/brands and consumers, which would greatly improve customer service, marketing decisions, product development, and various business decisions and activities. Besides, with approximately 4.9 billion people engaging in social media worldwide, the gigantic amount of digital footprints and data generated from these users are of utmost value for firms, brands, and various organizations (Wong, 2023). Consequently, firms across the globe then utilize this enormous data pool to connect all nodes and dots, rationalize trends and insights, and ultimately adjust their business decisions and strategies accordingly and suitably with ever-changing consumer consumption behavior.
 
-# Purpose/objective of this project - Forethought Project background 
+Regardless of the vast opportunities that arise from data gathering from social media platforms, making sense of these seemingly unrelated data pools is another obstacle to achieving. Not to mention the nature of social media data is unstructured and disorganized, improper text-mining type data extraction sometimes could cause data to be fragmented or disarrayed. As anyone could provide a self-produced contributions into social media platforms – as comments, posts and other reactions (Mutlu-Bayraktar, 2017), data is then being generated globally with difficulties in consideration of various consumers’ demographic data. Subsequently, in social media where it is an open public space for any comments, thoughts, and criticism, consumer demographic and criteria are often arbitrary and unknown - creating even further mislinkage across and between datasets. Fortunately, as data scientists and researchers are getting familiar with the nature of social media data, they are effectively thriving to understand the “Big Data” of social media by utilizing quantitative algorithms to procedurally understand human thoughts, motives, and drivers for posting and commenting (Bishop, 2017). As a result, sophisticated and systematic analysis procedures are required to create linkage, produce appropriate analysis methods, and extract valuable and sensible insights and findings. 
 
+Therefore, in this project, by a virtue of a great opportunity to be working and cooperating with the data scientist team at Forethought, we could turn this seemingly challenging project into a manageable streamline with appropriate guidelines to tackle complicated subject of social media analysis. Ultimately, we are substantially motivated to discover relationships between post-comments, themes and drivers for the datasets related to social media. By taking advantage of not only available and well-regarded text-mining methodologies, but also professional and well-proved analysis techniques and procedures from the team at Forethought, we are thrilled to share what we have incubated our thoughts, learned valuable analytical knowledge, struggled through challenges in professional settings, and discovered the long-strived insights in this report.
+
+
+# Business Objectives
+
+At the beginning of this project, we were assigned to conduct an exploratory data analysis on the datasets, which has been pulled from Facebook and Instagram – more specifically in form of posts, comments, time stamps, and their reactions from the four popular telecommunication brands of Telstra, Optus, Vodafone and Amaysim (more information to be explained in the data section). That first milestone of ours was to explore the datasets and generate the ideas of what could have been a proper business objective going forward. Thereafter, we have broad ideas of trends, sentiments and emotional stimulative within these datasets in corresponding to social media consumers. As a result, after a thorough and profound discussion with the data scientist team at Forethought, we have our solid business objective.
+
+Business objective: “Understand the brands within the social media culture”. 
+
+With that well-structured business objective is laid as the foundation, we must generate analysis goals and objectives which explore and discover what brands or Forethought’s potential client would have want to see and improve their brandings. Ultimately, we have come up with goals and objectives which aligned with corresponding the business objective as follow:
+
+Analysis Objectives:
+-	Evaluate and analyze the effectiveness and efficiency of brand posts.
+-	Develop models to enhance and optimize posts based on discovered themes and drivers.
+-	Understand consumers’ engagement and audience reach through comments and reactions.
+
+Furthermore, our working team was keen to provide us with guidance regarding methodologies and progressive planning. Consequently, we have mutually proposed methodologies of R Shiny – including trend analysis, text-mining and sentiment analysis, and OpenAI r package for qualitative exploration and analysis for themes, drivers and motives. These two methodologies would be the backbones for this project going forward to tackle the complexity of datasets which composed of both quantitative and qualitative nature sides. Subsequently, following are the methodologies and its description of usage which corresponding to both analysis and business objectives prior.
+
+Methodologies usage:
+- Social media analysis on relationship of Facebook and Instagram data of post versus comments
+- Social media trend, sentiment and performance analysis
+- Text summarization and NLP with OpenAI large language model API
+
+To elaborate further, quite essential work plannings from the Forethought team are being introduced, including “sprint plan” and “retrospective”. Both of which have been conducting on every fortnight, whereas sprint plan focuses on the milestone working team need to achieve and how to get there, retrospective focus on the four quadrants of ‘what was good’, ‘what needed improvement’, ‘ideas’ and ‘actions’ (see Figure \@ref(fig:workflow1) below). These workflow plans are key success indicators and paths for our project, as it would be numerously mentioned in the learning section again further in this report.
+
+```{r workflow1, out.width = '100%', echo = FALSE, fig.align="center", fig.cap ="Sprint Plan and Retrospective", fig.pos = "H"}
+knitr::include_graphics("plots/workflow.png")
+```
+
+Last but not least, the analysis of this project would greatly and mutually help the data science team at Forethought for further usage as a client presentation item for project briefs and proposals. As well as these methodologies would help the team have a better understanding of further usage and different approaches of analysis perspective – assisting them in the future project. Hence, the contributions of this project would significantly help both students from Monash to perform and use their knowledge to draw analysis and insights in the real-world setting, while the data science team at Forethought could also make use of analysis, methodologies, and findings to further conduct future project with clients. 
 
 # Data and Methodology
 
@@ -64,6 +95,8 @@ Introducing a new variable pertaining to brands within the themes of posts datas
 - Data quality: An additional challenge arose from the diverse and sometimes unstructured nature of customer-generated content. Comments often encompassed a range of linguistic variations, including slang, potential spelling errors, and non-standard language. These intricacies presented hurdles for natural language processing tasks.
 
 ## Data Dictionary
+
+As mentioned earlier, these datasets comprise of posts, comments, time stamps, and reactions from the four telecommunication brands of Telstra, Optus, Vodafone and Amaysim. They have been gathered at the start of the project, approximately in July, from April 2021, up to August 2023.
 
 ```{r}
 
@@ -109,8 +142,11 @@ The third control Brand as shown \@ref(fig:Plot4), allows users to explore speci
 knitr::include_graphics("plots/plot4.png")
 ```
 
+## Learning and Obstacles Discussion
 
-# Fingdings
+### 
+
+## Results and Fingdings
 
 ## Posts Findings
 
@@ -257,6 +293,17 @@ knitr::include_graphics("plots/plot24.png")
 Additionally, there were instances of customers reporting information leakage concerns with calling cards, along with an influx of fraudulent text messages and calls. To proactively address this issue, the staff is taking commendable steps by providing a designated website for reporting scam SMS/calls, thereby empowering consumers to take action against potential scammers. This analysis underscores the imperative for the brand to redouble efforts in curbing all forms of scams and spam, thereby further elevating consumer satisfaction and trust.
 
 
+## Qualitative Findings
+
+### Themes
+
+### Drivers
+
+### Insights
+
+
+
+
 # Conclusion
 
 ## Result highlighting
@@ -269,8 +316,7 @@ Regarding sentiment and thematic analysis, it becomes evident that brands must m
 
 In response to the data stories generated from customer comments, brands can make some appropriate adjustments in terms of services, products, and technological offerings. The common concerns of customers, such as data roaming charges, information security, and fraudulent calls/texts, should be of concern to brands. By actively mitigating these pain points, brands can effectively elevate customer satisfaction and foster brand loyalty. Notably, for Vodafone AU, which registers a comparatively lower percentage of positive sentiment in customer comments, considering improving the signal quality of the product is a step that should be addressed in increasing customer positivity and satisfaction.
 
-
-
+# References
 
 
 
