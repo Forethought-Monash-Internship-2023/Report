@@ -15,54 +15,61 @@ library(readr)
 library(kableExtra)
 library(bookdown)
 library(tinytex)
+library(readxl)
 ```
 
 
 # Abstract
 
+Contains aims, methods, data, findings
+
+This report
+
+The access to this project GitHub is below.
+GitHub repository link : https://github.com/Forethought-Monash-Internship-2023
 
 # Background and Motivation
 
 Enabling online connections and communications between people globally would be an understatement for social media, as it has shaped both professional and personal lives with immense impacts beyond mere people interactions. It has been gradually yet significantly evolving individuals’ news consumption, media and entertainment, and especially product and service consumption behavior. In 2022, internet users aged between 16 to 64 years old spend approximately 2 hours and 30 minutes daily on social media, with an upward trajectory of 2 percent at the start of 2023 (Kemp, 2023). These facts encourage firms to discover relationships and engagements between firms/brands and consumers, which would greatly improve customer service, marketing decisions, product development, and various business decisions and activities. Besides, with approximately 4.9 billion people engaging in social media worldwide, the gigantic amount of digital footprints and data generated from these users are of utmost value for firms, brands, and various organizations (Wong, 2023). Consequently, firms across the globe then utilize this enormous data pool to connect all nodes and dots, rationalize trends and insights, and ultimately adjust their business decisions and strategies accordingly and suitably with ever-changing consumer consumption behavior.
 
-Regardless of the vast opportunities that arise from data gathering from social media platforms, making sense of these seemingly unrelated data pools is another obstacle to achieving. Not to mention the nature of social media data is unstructured and disorganized, improper text-mining type data extraction sometimes could cause data to be fragmented or disarrayed. As anyone could provide a self-produced contributions into social media platforms – as comments, posts and other reactions (Mutlu-Bayraktar, 2017), data is then being generated globally with difficulties in consideration of various consumers’ demographic data. Subsequently, in social media where it is an open public space for any comments, thoughts, and criticism, consumer demographic and criteria are often arbitrary and unknown - creating even further mislinkage across and between datasets. Fortunately, as data scientists and researchers are getting familiar with the nature of social media data, they are effectively thriving to understand the “Big Data” of social media by utilizing quantitative algorithms to procedurally understand human thoughts, motives, and drivers for posting and commenting (Bishop, 2017). As a result, sophisticated and systematic analysis procedures are required to create linkage, produce appropriate analysis methods, and extract valuable and sensible insights and findings. 
+Regardless of the vast opportunities that arise from data gathering from social media platforms, making sense of these seemingly unrelated data pools is another obstacle to achieving. Not to mention the nature of social media data is unstructured and disorganized, improper text-mining type data extraction sometimes could cause data to be fragmented or disarrayed. As anyone could provide a self-produced contribution to social media platforms – as comments, posts, and other reactions (Mutlu-Bayraktar, 2017), data is then being generated globally with difficulties considering various consumers’ demographic data. Subsequently, in social media where it is an open public space for any comments, thoughts, and criticism, consumer demographics and criteria are often arbitrary and unknown - creating even further mislinkage across and between datasets. Fortunately, as data scientists and researchers are getting familiar with the nature of social media data, they are effectively thriving to understand the “Big Data” of social media by utilizing quantitative algorithms to procedurally understand human thoughts, motives, and drivers for posting and commenting (Bishop, 2017). As a result, sophisticated and systematic analysis procedures are required to create linkage, produce appropriate analysis methods, and extract valuable and sensible insights and findings.  
 
-Therefore, in this project, by a virtue of a great opportunity to be working and cooperating with the data scientist team at Forethought, we could turn this seemingly challenging project into a manageable streamline with appropriate guidelines to tackle complicated subject of social media analysis. Ultimately, we are substantially motivated to discover relationships between post-comments, themes and drivers for the datasets related to social media. By taking advantage of not only available and well-regarded text-mining methodologies, but also professional and well-proved analysis techniques and procedures from the team at Forethought, we are thrilled to share what we have incubated our thoughts, learned valuable analytical knowledge, struggled through challenges in professional settings, and discovered the long-strived insights in this report.
+Therefore, in this project, under an excellent opportunity to work and cooperate with the data scientist team at Forethought, the team could turn this seemingly challenging project into a manageable streamline with appropriate guidelines to tackle the complicated subject of social media analysis. Ultimately, this project substantially motivates the team to discover relationships between post-comments, themes, and drivers for the datasets related to social media. By taking advantage of not only available and well-regarded text-mining methodologies, but also professional and well-proved analysis techniques and procedures from the team at Forethought, it is exciting to share what has incubated our thoughts, learned valuable analytical knowledge, struggled through challenges in professional settings, and discovered the long-strived insights in this report.
 
 
 # Business Objectives
 
-At the beginning of this project, we were assigned to conduct an exploratory data analysis on the datasets, which has been pulled from Facebook and Instagram – more specifically in form of posts, comments, time stamps, and their reactions from the four popular telecommunication brands of Telstra, Optus, Vodafone and Amaysim (more information to be explained in the data section). That first milestone of ours was to explore the datasets and generate the ideas of what could have been a proper business objective going forward. Thereafter, we have broad ideas of trends, sentiments and emotional stimulative within these datasets in corresponding to social media consumers. As a result, after a thorough and profound discussion with the data scientist team at Forethought, we have our solid business objective.
+At the beginning of this project, our team was assigned to conduct an exploratory data analysis on the datasets, which had been pulled from Facebook and Instagram – more specifically in the form of posts, comments, time stamps, and their reactions from the four popular telecommunication brands of Telstra, Optus, Vodafone and Amaysim (more information to be explained in the data section). That first milestone of ours was to explore the datasets and generate ideas of what could have been a proper business objective going forward. Thereafter, the broad ideas of trends, sentiments, and emotional stimulation within these datasets corresponding to social media consumers are generated. As a result, after a thorough and profound discussion with the data scientist team at Forethought, a solid business objective is created.
 
 Business objective: “Understand the brands within the social media culture”. 
 
-With that well-structured business objective is laid as the foundation, we must generate analysis goals and objectives which explore and discover what brands or Forethought’s potential client would have want to see and improve their brandings. Ultimately, we have come up with goals and objectives which aligned with corresponding the business objective as follow:
+With that well-structured business objective laid as the foundation, it is a must to generate analysis goals and objectives that explore and discover what brands or Forethought’s potential client would want to see and improve their brandings. Ultimately, goals and objectives are set, which aligned with corresponding the business objective as follows:
 
 Analysis Objectives:
 -	Evaluate and analyze the effectiveness and efficiency of brand posts.
 -	Develop models to enhance and optimize posts based on discovered themes and drivers.
 -	Understand consumers’ engagement and audience reach through comments and reactions.
 
-Furthermore, our working team was keen to provide us with guidance regarding methodologies and progressive planning. Consequently, we have mutually proposed methodologies of R Shiny – including trend analysis, text-mining and sentiment analysis, and OpenAI r package for qualitative exploration and analysis for themes, drivers and motives. These two methodologies would be the backbones for this project going forward to tackle the complexity of datasets which composed of both quantitative and qualitative nature sides. Subsequently, following are the methodologies and its description of usage which corresponding to both analysis and business objectives prior.
+Furthermore, our working team was keen to provide us with guidance regarding methodologies and progressive planning. Consequently, the team mutually proposed methodologies of R Shiny – including trend analysis, text-mining, and sentiment analysis, and the OpenAI r package for qualitative exploration and analysis for themes, drivers, and motives. These two methodologies would be the backbones for this project going forward to tackle the complexity of datasets which are composed of both quantitative and qualitative nature sides. Subsequently, the following are the methodologies and their descriptions of usage which correspond to both analysis and business objectives.
 
 Methodologies usage:
 - Social media analysis on relationship of Facebook and Instagram data of post versus comments
 - Social media trend, sentiment and performance analysis
 - Text summarization and NLP with OpenAI large language model API
 
-To elaborate further, quite essential work plannings from the Forethought team are being introduced, including “sprint plan” and “retrospective”. Both of which have been conducting on every fortnight, whereas sprint plan focuses on the milestone working team need to achieve and how to get there, retrospective focus on the four quadrants of ‘what was good’, ‘what needed improvement’, ‘ideas’ and ‘actions’ (see Figure \@ref(fig:workflow1) below). These workflow plans are key success indicators and paths for our project, as it would be numerously mentioned in the learning section again further in this report.
+To elaborate further, quite essential work plans from the Forethought team are being introduced, including “sprint plan” and “retrospective”. Both of these have been conducted every fortnight, whereas the sprint plan focuses on the milestone the working team needs to achieve and how to get there, with retrospective focus on the four quadrants of ‘what was good’, ‘what needed improvement’, ‘ideas’ and ‘actions’ (see Figure \@ref(fig:workflow1) below). These workflow plans are key success indicators and paths for our project, as they will be numerously mentioned in the learning section again further in this report.
 
 ```{r workflow1, out.width = '100%', echo = FALSE, fig.align="center", fig.cap ="Sprint Plan and Retrospective", fig.pos = "H"}
 knitr::include_graphics("plots/workflow.png")
 ```
 
-Last but not least, the analysis of this project would greatly and mutually help the data science team at Forethought for further usage as a client presentation item for project briefs and proposals. As well as these methodologies would help the team have a better understanding of further usage and different approaches of analysis perspective – assisting them in the future project. Hence, the contributions of this project would significantly help both students from Monash to perform and use their knowledge to draw analysis and insights in the real-world setting, while the data science team at Forethought could also make use of analysis, methodologies, and findings to further conduct future project with clients. 
+Last but not least, the analysis of this project would greatly and mutually help the data science team at Forethought for further usage as a client presentation item for project briefs and proposals. These methodologies would help the team have a better understanding of further usage and different approaches of analysis perspective – assisting them in future projects. Hence, the contributions of this project would significantly help both students from Monash to perform and use their knowledge to draw analysis and insights in the real-world setting, while the data science team at Forethought could also make use of analysis, methodologies, and findings to further conduct future project with clients. 
 
 # Data and Methodology
 
 ## Data Sources
 
-The four datasets analyzed in this report comprise posts and comments are pulled from Facebook and Instagram social media, regarding the four brands Amaysim, Optus, Telstra, and Vodafone.
+The four datasets analyzed in this report comprise posts and comments pulled from Facebook and Instagram social media, regarding the four brands Amaysim, Optus, Telstra, and Vodafone. These data are from open-source origin with no disclosure or license issue and thus can be used both internally and externally in this project and others.
 
 ## Data Cleaning
 
@@ -82,7 +89,7 @@ The comments dataset and *FB/IG_url* are in-joined using the `inner_join` functi
 
 Acquiring a set of stop words utilizing the `get_stopwords` function, employing the snowball lexicon. These stopwords are stored in a dataset named *stopword*. Both posts and comments are separated into individual words or pairs of words using the `unnest_tokens` function. This step is essential for further analysis. The *stopword* dataset is reintegrated using a back-join operation with the `anti_join` function, effectively removing the identified stop words. The resulting dataset is stored for subsequent use in generating wordclouds, sentiment analysis plots, and other analytical outputs.
 
-Introducing a new variable pertaining to brands within the themes of posts dataset with the `append` function. Merging the datasets pertaining to themes of posts from both Facebook and Instagram, using the `rbind` function to ensure a unified and comprehensive view of brand-related.
+Introducing a new variable pertaining to brands within the themes of posts dataset with the `append` function. Merging the datasets pertaining to themes of posts from both Facebook and Instagram, using the `rbind` function to ensure a unified and comprehensive view of brand-related. Both posts and comments items are being extracted into single column vector as prepared for OpenAI analysis in further NLP qualitative analysis section.
 
 ## Data Limitations
 
@@ -94,12 +101,40 @@ Introducing a new variable pertaining to brands within the themes of posts datas
 
 - Data quality: An additional challenge arose from the diverse and sometimes unstructured nature of customer-generated content. Comments often encompassed a range of linguistic variations, including slang, potential spelling errors, and non-standard language. These intricacies presented hurdles for natural language processing tasks.
 
+- Data loss and missing: As the data scientist working team pulled this data using Python and internal methods, some data appeared missing, especially when proceeding with the join function. Making some data unusable and un-comprehensive. Thus, the majority of data can be utilized for analysis, while the minority unfortunately has to be dropped.
+
 ## Data Dictionary
 
-As mentioned earlier, these datasets comprise of posts, comments, time stamps, and reactions from the four telecommunication brands of Telstra, Optus, Vodafone and Amaysim. They have been gathered at the start of the project, approximately in July, from April 2021, up to August 2023.
+As mentioned earlier, these datasets comprise posts, comments, time stamps, and reactions from the four telecommunication brands Telstra, Optus, Vodafone, and Amaysim. They have been gathered at the start of the project, approximately in July, from April 2021, up to August 2023. While the original dataset pulled fresh from social media platform contain numerous variables, only the majority of them make sense for analysis purpose. Therefore, these are variables that would be included in both the data dictionary and analysis.
 
-```{r}
+These datasets contain character, numeric, and date-type variables. The datasets reside within the *clean_data* folder, where they are separated by 'Facebook' and 'Instagram' datasets, with further three files for the post, comments, and combined post-and-comment. Since each data file category is different, data dictionaries are separated by their post-comments and Facebook-Instagram files as below.
 
+```{r read_datadict, echo=FALSE, eval=TRUE}
+data_dict_FB_post <- read_excel("data_dict/data_dict_FB_post.xlsx")
+data_dict_FB_comment <- read_excel("data_dict/data_dict_FB_comment.xlsx")
+data_dict_FB_post <- read_excel("data_dict/data_dict_IG_post.xlsx")
+data_dict_IG_comment <- read_excel("data_dict/data_dict_IG_comment.xlsx")
+```
+
+
+```{r datadict_table_fb1, echo=FALSE, eval=TRUE}
+kable(data_dict_FB_post) # %>% 
+  # kable_styling()
+```
+
+```{r datadict_table_fb2, echo=FALSE, eval=TRUE}
+kable(data_dict_FB_comment) # %>% 
+  # kable_styling()
+```
+
+```{r datadict_table_ig1, echo=FALSE, eval=TRUE}
+kable(data_dict_FB_post) # %>% 
+  # kable_styling()
+```
+
+```{r datadict_table_ig2, echo=FALSE, eval=TRUE}
+kable(data_dict_IG_comment) # %>% 
+  # kable_styling()
 ```
 
 ## Methodologies
@@ -114,7 +149,20 @@ While gauging the 'heat' of each brand's posts is informative, it is essential t
 
 ### OpenAI Large Language Model API
 
-In the realm of social media data analysis, using the power of the openAI Large Language Model API for textual summarization. API is a critical tool in extracting textual topics from the vast pool of social media content by filtering out extraneous and less relevant information and obtaining the most meaningful topics, providing users with a clear and concise overview for informed decision-making and strategic planning.
+In the realm of social media data analysis, using the power of the OpenAI Large Language Model API for textual summarization. API is a critical tool in extracting textual topics from the vast pool of social media content by filtering out extraneous and less relevant information and obtaining the most meaningful topics, providing users with a clear and concise overview for informed decision-making and strategic planning. In this project, "gpt-3.5-turbo" is used as our main model for the analysis majority of qualitative processes, for its excellent ability to detect, process, and extract with language at fast speed and reliable cost - especially optimized and capable of chat completion API. The function `create_chat_completion` is mainly used in "openai" package in r to employ OpenAI to process natural language detection and complete our request through various appropriate prompts, pertaining to themes, drivers, and analysis that would like to see. In the figure \@ref(fig:ai1) below are examples of OpenAI function usage and prompts. Themes are drivers are both generally explored in the holistic view, then after mutual themes and drivers are discovered, these themes and drivers output from openai will be categorized within each brand and post to find where each post lies within which themes, as seen in prompts in figures \@ref(fig:ai2) and \@ref(fig:ai3) below. These methodologies will be elaborated further in the findings section.
+
+```{r ai1, out.width = '100%', echo = FALSE, fig.align="center", fig.cap ="R shiny interface", fig.pos = "H"}
+knitr::include_graphics("plots/ai1.png")
+```
+
+```{r ai2, out.width = '100%', echo = FALSE, fig.align="center", fig.cap ="R shiny interface", fig.pos = "H"}
+knitr::include_graphics("plots/ai2.png")
+```
+
+```{r ai3, out.width = '100%', echo = FALSE, fig.align="center", fig.cap ="R shiny interface", fig.pos = "H"}
+knitr::include_graphics("plots/ai3.png")
+```
+
 
 ### R shiny for visulization
 
@@ -142,11 +190,8 @@ The third control Brand as shown \@ref(fig:Plot4), allows users to explore speci
 knitr::include_graphics("plots/plot4.png")
 ```
 
-## Learning and Obstacles Discussion
 
-### 
-
-## Results and Fingdings
+# Results and Fingdings
 
 ## Posts Findings
 
@@ -297,12 +342,44 @@ Additionally, there were instances of customers reporting information leakage co
 
 ### Themes
 
+Referring back to 5.1.5, where themes are shown in \@ref(fig:Plot14) and \@ref(fig:Plot15), each brand has its own set of themes that correspond to their posting style. These can be explored and analyzed further by understanding which themes brands would like to steer to. For example, Telstra focuses more on Product and Service updates and Technical Issues Resolution; while Optus focuses more on Promotions and Offers with a large amount of Sports Sponsorship and Events. These can help to see where brands want to be and how they would like to engage with their customers through these themes.
+
+Furthermore, these themes can be explored further on the performance of each brand's themes in relationship with reactions, such as likes and comments number. 
+
 ### Drivers
 
-### Insights
+Drivers refer to mutual themes of context for consumer comments, where their motives of writing or commenting is driven by certain motive, or driver in this case. Overall sentiment and a detailed sense of drivers on the holistic view of comments across each brand can be concluded and analyzed.
 
 
+## Learning and Obstacles Discussion
 
+### Learning Outcomes
+
+**Real-World Objective-based Data Analysis Skills**
+
+Since the majority of the courses taken throughout the Business Analytics major have to tackle numerical and statistical data, this project, on the contrary, has shaped our learning curve and thoughts toward more marketing analytic side. This helps us understand and create linkage quantitatively and qualitatively throughout the work streamlining from EDA to insights analysis. Furthermore, critical thinking skills are greatly developed when it comes to data analysis; this is helpful for us that must be realize and focus on what insights and results our stakeholders would like to see, making our thought process more comprehensive to develop appropriate analytical methodologies and tools to help achieve results which align with business objective. 
+
+**Professional Settings Working Team**
+
+Besides our analytical skills which have been enhanced, our teamwork ability in this field has also been honed. Understanding how much teamwork skills is valuable in the professional setting, especially with supervisors and colleagues. Connecting and keeping in touch across the team to reach mutual goals greatly help us understand and improve our ability to work analytically with others. Also, with the great help of the sprint plan and retrospective meeting, the team has gradually improved analytical learning skills by understanding their weaknesses and strengths alongside actions and ideas planning. By combining all those items together, the team can shape their working style coherently towards the mutual goals of every milestone and ensure the on-track stage of every member.
+
+**Prompt Engineering**
+
+Quite an interesting topic that the team has learned in this project. The usage of OpenAI itself would be ineffective without proper prompt input into the completion request. Properly creating meaningful and efficient prompts for each task, analysis, and consolidation of data is proven to be crucial. Given that this field of prompt engineering has become more popular over the years, this skill would excellently help us make use of OpenAI more profound and useful. As a result, writing a descriptive and detailed, yet concise and compact prompt while ensuring that not request multiple tasks for OpenAI is the best type of prompt that we could use to extract our findings.
+
+### Obstacles Overcome
+
+**Text-mining data cleaning**
+
+The Data sets are overwhelming and obstruct our progress at the first stage, for their massive observations that seem unrelatable at first. However, the Forethought team significantly assisted in guiding through the EDA process, making the team understand what should be included, cleaned, and presented for the preliminary and deep analysis stage. Unlike pre-clean data that students have received during their courses, rearranging and cleaning untidy data in the business real-world setting takes more than delicate skills, but also an objective-based mindset to construct a proper thought process when cleaning the data.
+
+**Displaying in R Shiny**
+
+Since plenty of data visualizations are present to be shown, not every single one of them can be selected. Therefore, cohesively telling the story through R Shiny is another challenge. Digesting and compiling through the looking-glass of client and stakeholder, data visuals are crafty and presented with the story and cohesion in mind; ensuring that most of the visuals in R Shiny are compelling and interesting with story linkage in between each panel for client to explore.
+
+**OpenAI Package**
+
+As this package is mainly created with Python in mind and is relatively new, fine-tuning codes, commands, functions, and prompts using R is quite difficult. Several weeks have been spent on fine-tuning these openai package functions, especially prompt engineering which needs an extra number of trials and errors to find the best combination for different objectives. Nevertheless, with the help of the team at Forethought and internal learning, the OpenAI package has been thoroughly learned and explored for the best usage of this project.
 
 # Conclusion
 
@@ -315,6 +392,7 @@ The time-series plot unequivocally illustrates the profound impact of innovative
 Regarding sentiment and thematic analysis, it becomes evident that brands must maintain a vigilant watch on sentiment trends during content dissemination. Cultivating positive emotions within content not only bolsters customer engagement but also cultivates a more favorable brand perception. For telecom operators, striking a balance between customer-centric content and product/service updates emerges as a pivotal strategy. Focusing on customer appreciation, engagement, and loyalty fortifies satisfaction and retention while concurrently spotlighting product and service offerings ensures competitiveness within the market landscape.
 
 In response to the data stories generated from customer comments, brands can make some appropriate adjustments in terms of services, products, and technological offerings. The common concerns of customers, such as data roaming charges, information security, and fraudulent calls/texts, should be of concern to brands. By actively mitigating these pain points, brands can effectively elevate customer satisfaction and foster brand loyalty. Notably, for Vodafone AU, which registers a comparatively lower percentage of positive sentiment in customer comments, considering improving the signal quality of the product is a step that should be addressed in increasing customer positivity and satisfaction.
+
 
 # References
 
