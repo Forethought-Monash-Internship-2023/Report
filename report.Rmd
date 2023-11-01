@@ -355,33 +355,33 @@ Referring back to 5.1.5, where themes are shown in Figure \@ref(fig:Plot14) and 
 
 Thereafter, these themes can be explored further on the performance of each brand's themes in relationship with reactions, such as, in this case likes and reactions number order in a descending fashion. For example from Instagram, in Figure \@ref(fig:theme1) and Figure \@ref(fig:theme2) tables are top posts by number of likes from Telstra and Optus, respectively. For Telstra, Theme 2: Connectivity and Communication and Theme 1: Nostalgia and Pop Culture dominate as most likes’ interaction for Telstra. However, Optus has more diversity in terms of post style which generates top rank liked post. Still, their best posts are related to Theme of Support for Ambassadors and Athletes and Theme of Product and Service Promotions. VodafoneAU and Amaysim also diverse in themes as seen in table Figure \@ref(fig:theme3), while Amaysim focuses merely in Customer Appreciation Theme as seen in table Figure \@ref(fig:theme4). Moreover, based on different objective, either likes, views, shares and comments number can be ordered accordingly as well.
 
-```{r theme1, out.width = '55%', echo = FALSE, fig.align="center", fig.cap = "Telstra Instagram Themes", fig.pos = "H"}
+```{r theme1, out.width = '100%', echo = FALSE, fig.align="center", fig.cap = "Telstra Instagram Themes", fig.pos = "H"}
 knitr::include_graphics("plots/theme1.png")
 ```
 
-```{r theme2, out.width = '55%', echo = FALSE, fig.align="center", fig.cap = "Optus Instagram Themes", fig.pos = "H"}
+```{r theme2, out.width = '100%', echo = FALSE, fig.align="center", fig.cap = "Optus Instagram Themes", fig.pos = "H"}
 knitr::include_graphics("plots/theme2.png")
 ```
 
-```{r theme3, out.width = '55%', echo = FALSE, fig.align="center", fig.cap = "Vodafone Instagram Themes", fig.pos = "H"}
+```{r theme3, out.width = '100%', echo = FALSE, fig.align="center", fig.cap = "Vodafone Instagram Themes", fig.pos = "H"}
 knitr::include_graphics("plots/theme3.png")
 ```
 
-```{r theme4, out.width = '55%', echo = FALSE, fig.align="center", fig.cap = "Amaysim Instagram Themes", fig.pos = "H"}
+```{r theme4, out.width = '90%', echo = FALSE, fig.align="center", fig.cap = "Amaysim Instagram Themes", fig.pos = "H"}
 knitr::include_graphics("plots/theme4.png")
 ```
 
 As for Facebook, the following figure of \@ref(fig:theme5), \@ref(fig:theme6), \@ref(fig:theme7); Telstra, VodafoneAU and Amaysim, respectively, can be explored as well. (Please note that, in this case, Optus top posts are all incorrectly pull from Facebook platform, making these top posts named as "No Caption", thus not included in this section). Similar conclusion can be drawn that Telstra is quite persistent with what's work in majority of their first and second themes. Whereas both Vodafone and Amaysim are in stage of exploration into different themes to find optimum ones.
 
-```{r theme5, out.width = '55%', echo = FALSE, fig.align="center", fig.cap = "Telstra Facebook Themes", fig.pos = "H"}
+```{r theme5, out.width = '100%', echo = FALSE, fig.align="center", fig.cap = "Telstra Facebook Themes", fig.pos = "H"}
 knitr::include_graphics("plots/theme5.png")
 ```
 
-```{r theme6, out.width = '55%', echo = FALSE, fig.align="center", fig.cap = "Vodafone Facebook Themes", fig.pos = "H"}
+```{r theme6, out.width = '100%', echo = FALSE, fig.align="center", fig.cap = "Vodafone Facebook Themes", fig.pos = "H"}
 knitr::include_graphics("plots/theme6.png")
 ```
 
-```{r theme7, out.width = '55%', echo = FALSE, fig.align="center", fig.cap = "Amaysim Facebook Themes", fig.pos = "H"}
+```{r theme7, out.width = '100%', echo = FALSE, fig.align="center", fig.cap = "Amaysim Facebook Themes", fig.pos = "H"}
 knitr::include_graphics("plots/theme7.png")
 ```
 
