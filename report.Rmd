@@ -34,7 +34,9 @@ Findings ranges from trends, networks, overall summary and deep-dive summary as 
 The access to this project GitHub is below.
 GitHub repository link : https://github.com/Forethought-Monash-Internship-2023
 
-Important Note: Package and documentation usage for this project lies within the internal repository which is set as private for usage only at Forethought.
+Important Note 1: Package and documentation usage for this project lies within the internal repository which is set as private for usage only at Forethought.
+
+Important Note 2: OpenAI and API Model is extensively used merely as sentiment and NLP analysis, not assisting in any writing nor compiling any report.
 
 # Background and Motivation
 
@@ -456,5 +458,9 @@ Kemp, S. (2023, January 28). Digital 2023 deep-dive: How much time do we spend o
 
 Mutlu-Bayraktar, D. (2017). Usability Evaluation of Social Media Web Sites and Applications via Eye-Tracking Method. *In S. Hai-Jew (Ed.), Social Media Data Extraction and Content Analysis (pp. 85-112)*. IGI Global. https://doi.org/10.4018/978-1-5225-0648-5.ch004
 
+OpenAI. (2023). OpenAI API (gpt-3.5-turbo) [Large language model] http://openai.com/
+
 Wong, B. (2023, August 7). Top social media statistics and trends of 2023. *Forbes Advisor.* https://www.forbes.com/advisor/business/social-media-statistics/
+
+
 
