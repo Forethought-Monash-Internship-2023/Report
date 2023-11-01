@@ -1,18 +1,21 @@
 ---
-title: "Social Media Analysis on Relationship of Facebook and Instagram Post-Comments"
-author: "Chatpisut Makornkhan (32580231) & Gui Gao (32723237)"
-date: "2023-10-28"
+title: \Huge Social Media Analysis on Relationship of Facebook and Instagram Post-Comments
+author: \Large Chatpisut Makornkhan (32580231) & Gui Gao (32723237)
+date: \Large 2023-10-28
+organization: \Large Monash University, Faculty of Business and Economics
 output:
   bookdown::pdf_document2:
-    number_sections: yes
+    includes:
+      in_header: preamble.tex
+      before_body: main_content_template.tex
     toc: true
 ---
 
+\newpage
 
 ```{r, echo = FALSE, message = FALSE, warning = FALSE}
 library(tidyverse)
 library(readr)
-library(kableExtra)
 library(bookdown)
 library(tinytex)
 library(readxl)
@@ -27,6 +30,8 @@ This report
 
 The access to this project GitHub is below.
 GitHub repository link : https://github.com/Forethought-Monash-Internship-2023
+
+Important Note: Package and documentation usage for this project lies within the internal repository which is set as private for usage only at Forethought.
 
 # Background and Motivation
 
@@ -60,8 +65,10 @@ Methodologies usage:
 To elaborate further, quite essential work plans from the Forethought team are being introduced, including “sprint plan” and “retrospective”. Both of these have been conducted every fortnight, whereas the sprint plan focuses on the milestone the working team needs to achieve and how to get there, with retrospective focus on the four quadrants of ‘what was good’, ‘what needed improvement’, ‘ideas’ and ‘actions’ (see Figure \@ref(fig:workflow1) below). These workflow plans are key success indicators and paths for our project, as they will be numerously mentioned in the learning section again further in this report.
 
 ```{r workflow1, out.width = '100%', echo = FALSE, fig.align="center", fig.cap ="Sprint Plan and Retrospective", fig.pos = "H"}
-knitr::include_graphics("plots/workflow.png")
+knitr::include_graphics("plots/workflow1.png")
 ```
+
+Explaining further on the usage of sprint plan and retrospective workflow, the team utilize these frameworks to process and generate progressive goals ahead every fortnight. With this in mind, week 1-2 focuses on 'Project Inception and Market Analysis' - understanding overall work scope and project induction; week 3-4 focuses on 'Data wrangling and Preliminary Analysis' - extensively cleaning the data and starting basic analysis with EDA; week 5-6 focuses on 'Insights Analysis and Report Preparation' - concluding the result of insights with report initiation; week 7-8 focuses on 'Documentation and Report Finalization' - wrapping up the project with final report, chronologically and respectively. Thus, both frameworks provide the team excellent guidelines on where the project is heading with tangible goals ahead, alongside ability to realize what should be strengthen and where should be resolved.
 
 Last but not least, the analysis of this project would greatly and mutually help the data science team at Forethought for further usage as a client presentation item for project briefs and proposals. These methodologies would help the team have a better understanding of further usage and different approaches of analysis perspective – assisting them in future projects. Hence, the contributions of this project would significantly help both students from Monash to perform and use their knowledge to draw analysis and insights in the real-world setting, while the data science team at Forethought could also make use of analysis, methodologies, and findings to further conduct future project with clients. 
 
@@ -107,34 +114,33 @@ Introducing a new variable pertaining to brands within the themes of posts datas
 
 As mentioned earlier, these datasets comprise posts, comments, time stamps, and reactions from the four telecommunication brands Telstra, Optus, Vodafone, and Amaysim. They have been gathered at the start of the project, approximately in July, from April 2021, up to August 2023. While the original dataset pulled fresh from social media platform contain numerous variables, only the majority of them make sense for analysis purpose. Therefore, these are variables that would be included in both the data dictionary and analysis.
 
-These datasets contain character, numeric, and date-type variables. The datasets reside within the *clean_data* folder, where they are separated by 'Facebook' and 'Instagram' datasets, with further three files for the post, comments, and combined post-and-comment. Since each data file category is different, data dictionaries are separated by their post-comments and Facebook-Instagram files as below.
+These datasets contain character, numeric, and date-type variables. The datasets reside within the *clean_data* folder, where they are separated by 'Facebook' and 'Instagram' datasets, with further three files for the post, comments, and combined post-and-comment. Since each data file category is different, data dictionaries are separated by their post-comments and Facebook-Instagram files data_dict. Furthermore, data variables can also be seen within readme file as well.
 
 ```{r read_datadict, echo=FALSE, eval=TRUE}
 data_dict_FB_post <- read_excel("data_dict/data_dict_FB_post.xlsx")
 data_dict_FB_comment <- read_excel("data_dict/data_dict_FB_comment.xlsx")
-data_dict_FB_post <- read_excel("data_dict/data_dict_IG_post.xlsx")
+data_dict_IG_post <- read_excel("data_dict/data_dict_IG_post.xlsx")
 data_dict_IG_comment <- read_excel("data_dict/data_dict_IG_comment.xlsx")
 ```
 
-
-```{r datadict_table_fb1, echo=FALSE, eval=TRUE}
-kable(data_dict_FB_post) # %>% 
-  # kable_styling()
+```{r datadict_table, echo=FALSE, eval=TRUE}
+kable(data_dict_FB_post) %>% 
+  kable_styling()
 ```
 
-```{r datadict_table_fb2, echo=FALSE, eval=TRUE}
-kable(data_dict_FB_comment) # %>% 
-  # kable_styling()
+```{r datadict_table, echo=FALSE, eval=TRUE}
+kable(data_dict_FB_comment) %>% 
+  kable_styling()
 ```
 
-```{r datadict_table_ig1, echo=FALSE, eval=TRUE}
-kable(data_dict_FB_post) # %>% 
-  # kable_styling()
+```{r datadict_table, echo=FALSE, eval=TRUE}
+kable(data_dict_IG_post) %>% 
+  kable_styling()
 ```
 
-```{r datadict_table_ig2, echo=FALSE, eval=TRUE}
-kable(data_dict_IG_comment) # %>% 
-  # kable_styling()
+```{r datadict_table, echo=FALSE, eval=TRUE}
+kable(data_dict_IG_comment) %>% 
+  kable_styling()
 ```
 
 ## Methodologies
@@ -151,15 +157,15 @@ While gauging the 'heat' of each brand's posts is informative, it is essential t
 
 In the realm of social media data analysis, using the power of the OpenAI Large Language Model API for textual summarization. API is a critical tool in extracting textual topics from the vast pool of social media content by filtering out extraneous and less relevant information and obtaining the most meaningful topics, providing users with a clear and concise overview for informed decision-making and strategic planning. In this project, "gpt-3.5-turbo" is used as our main model for the analysis majority of qualitative processes, for its excellent ability to detect, process, and extract with language at fast speed and reliable cost - especially optimized and capable of chat completion API. The function `create_chat_completion` is mainly used in "openai" package in r to employ OpenAI to process natural language detection and complete our request through various appropriate prompts, pertaining to themes, drivers, and analysis that would like to see. In the figure \@ref(fig:ai1) below are examples of OpenAI function usage and prompts. Themes are drivers are both generally explored in the holistic view, then after mutual themes and drivers are discovered, these themes and drivers output from openai will be categorized within each brand and post to find where each post lies within which themes, as seen in prompts in figures \@ref(fig:ai2) and \@ref(fig:ai3) below. These methodologies will be elaborated further in the findings section.
 
-```{r ai1, out.width = '100%', echo = FALSE, fig.align="center", fig.cap ="R shiny interface", fig.pos = "H"}
+```{r ai1, out.width = '100%', echo = FALSE, fig.align="center", fig.cap ="OpenAI Prompt Example 1", fig.pos = "H"}
 knitr::include_graphics("plots/ai1.png")
 ```
 
-```{r ai2, out.width = '100%', echo = FALSE, fig.align="center", fig.cap ="R shiny interface", fig.pos = "H"}
+```{r ai2, out.width = '100%', echo = FALSE, fig.align="center", fig.cap ="OpenAI Prompt Example 2", fig.pos = "H"}
 knitr::include_graphics("plots/ai2.png")
 ```
 
-```{r ai3, out.width = '100%', echo = FALSE, fig.align="center", fig.cap ="R shiny interface", fig.pos = "H"}
+```{r ai3, out.width = '100%', echo = FALSE, fig.align="center", fig.cap ="OpenAI Prompt Example 3", fig.pos = "H"}
 knitr::include_graphics("plots/ai3.png")
 ```
 
@@ -393,9 +399,13 @@ Regarding sentiment and thematic analysis, it becomes evident that brands must m
 
 In response to the data stories generated from customer comments, brands can make some appropriate adjustments in terms of services, products, and technological offerings. The common concerns of customers, such as data roaming charges, information security, and fraudulent calls/texts, should be of concern to brands. By actively mitigating these pain points, brands can effectively elevate customer satisfaction and foster brand loyalty. Notably, for Vodafone AU, which registers a comparatively lower percentage of positive sentiment in customer comments, considering improving the signal quality of the product is a step that should be addressed in increasing customer positivity and satisfaction.
 
-
 # References
 
+Bishop, J. (2017). Devising Parametric User Models for Processing and Analysing Social Media Data to Influence User Behaviour: Using Quantitative and Qualitative Analysis of Social Media Data. *In S. Hai-Jew (Ed.), Social Media Data Extraction and Content Analysis (pp. 1-41)*. IGI Global. https://doi.org/10.4018/978-1-5225-0648-5.ch001
 
+Kemp, S. (2023, January 28). Digital 2023 deep-dive: How much time do we spend on social media? DataReportal – Global Digital Insights. https://datareportal.com/reports/digital-2023-deep-dive-time-spent-on-social-media
 
+Mutlu-Bayraktar, D. (2017). Usability Evaluation of Social Media Web Sites and Applications via Eye-Tracking Method. *In S. Hai-Jew (Ed.), Social Media Data Extraction and Content Analysis (pp. 85-112)*. IGI Global. https://doi.org/10.4018/978-1-5225-0648-5.ch004
+
+Wong, B. (2023, August 7). Top social media statistics and trends of 2023. *Forbes Advisor.* https://www.forbes.com/advisor/business/social-media-statistics/
 
