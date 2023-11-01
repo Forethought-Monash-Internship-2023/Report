@@ -19,6 +19,7 @@ library(readr)
 library(bookdown)
 library(tinytex)
 library(readxl)
+library(kableExtra)
 ```
 
 
@@ -123,24 +124,24 @@ data_dict_IG_post <- read_excel("data_dict/data_dict_IG_post.xlsx")
 data_dict_IG_comment <- read_excel("data_dict/data_dict_IG_comment.xlsx")
 ```
 
-```{r datadict_table, echo=FALSE, eval=TRUE}
+```{r datadict_table1, echo=FALSE, eval=TRUE}
 kable(data_dict_FB_post) %>% 
-  kable_styling()
+  kable_styling(latex_options = c("scale_down", "hold_position"))
 ```
 
-```{r datadict_table, echo=FALSE, eval=TRUE}
+```{r datadict_table2, echo=FALSE, eval=TRUE}
 kable(data_dict_FB_comment) %>% 
-  kable_styling()
+  kable_styling(latex_options = c("scale_down", "hold_position"))
 ```
 
-```{r datadict_table, echo=FALSE, eval=TRUE}
+```{r datadict_table3, echo=FALSE, eval=TRUE}
 kable(data_dict_IG_post) %>% 
-  kable_styling()
+  kable_styling(latex_options = c("scale_down", "hold_position"))
 ```
 
-```{r datadict_table, echo=FALSE, eval=TRUE}
+```{r datadict_table4, echo=FALSE, eval=TRUE}
 kable(data_dict_IG_comment) %>% 
-  kable_styling()
+  kable_styling(latex_options = c("scale_down", "hold_position"))
 ```
 
 ## Methodologies
@@ -229,13 +230,13 @@ knitr::include_graphics("plots/plot8.png")
 
 For instance, delving into the Facebook dataset, a standout observation was Telstra's post \@ref(fig:Plot9) on February 3, 2023. This post garnered an exceptionally high number of customer reactions and shares. The post, humorously captioned *POV every dads belt in 1999*, cleverly references a specific period (1999) and taps into a universally relatable parenting experience. By addressing a potentially severe topic like discipline in a light-hearted manner, the post strikes a chord with individuals who came of age during that era. This clever use of nostalgia triggers a wave of strong emotions and memories, making customers engage actively with the post. This analysis underscores the potent impact that well-crafted content can wield, resonating deeply with audiences and fostering heightened engagement levels.
 
-```{r Plot9, out.width = '50%', echo = FALSE, fig.align="center", fig.cap = "Time series plot of Telstra", fig.pos = "H"}
+```{r Plot9, out.width = '40%', echo = FALSE, fig.align="center", fig.cap = "Time series plot of Telstra", fig.pos = "H"}
 knitr::include_graphics("plots/plot9.png")
 ```
 
 In the time series plot \@ref(fig:Plot10) of the Instagram dataset, a vast gap arises in the likes number. This post, jointly published by Optus and the renowned Australian racing driver Daniel Ricciardo, garnered an astounding 330,000 likes. The involvement of a highly influential celebrity like Ricciardo significantly amplifies the post's visibility and impact. This observation underscores a strategic avenue for brands - collaborating with well-known personalities. Such partnerships enable brands to harness the extensive reach and influence of celebrities, expanding their follower base and extending their brand's outreach. This symbiotic relationship not only enhances brand visibility but also fosters a broader and more engaged audience. 
 
-```{r Plot10, out.width = '50%', echo = FALSE, fig.align="center", fig.cap = "Time series plot of Optus", fig.pos = "H"}
+```{r Plot10, out.width = '40%', echo = FALSE, fig.align="center", fig.cap = "Time series plot of Optus", fig.pos = "H"}
 knitr::include_graphics("plots/plot10.png")
 ```
 
@@ -243,7 +244,7 @@ knitr::include_graphics("plots/plot10.png")
 
 The word cloud shows the top 60 words with the highest word frequency in the post text for the current filter. Words that occur more frequently are visually emphasized with larger font sizes in the word cloud map. In the Facebook dataset  \@ref(fig:Plot11), the word *amaysim* emerges with the highest frequency, tallying 31 occurrences. Other commonly used words include *big*, *caption*, and *event*. Meanwhile, within the Instagram dataset \@ref(fig:Plot12), *optus* takes the lead with a frequency count of 70 instances. Additional prevalent terms encompass *big*, *love*, *amaysim*, and more. These frequently occurring words exemplify common themes prevalent in social media content. They serve as critical indicators of the prevalent topics and discussions within the realm of social media data.
 
-```{r Plot11, out.width = '60%', echo = FALSE, fig.align="center", fig.cap = "Word cloud of Facebook posts", fig.pos = "H"}
+```{r Plot11, out.width = '50%', echo = FALSE, fig.align="center", fig.cap = "Word cloud of Facebook posts", fig.pos = "H"}
 knitr::include_graphics("plots/plot11.png")
 ```
 
@@ -281,25 +282,25 @@ Optus and Telstra, in contrast, their posts predominantly focus on topics relate
 
 The bigram network \@ref(fig:Plot16) visualization method unveils the interrelationship between consecutive word pairs within customer comments. The intensity of gray shading surrounding more frequently occurring word pairs provides a visual cue. This technique is a powerful tool for extracting insights into co-occurring terminologies, illuminating specific language patterns and expressions commonly employed in customer comments. Bigram can highlight key phrases or expressions that are frequently mentioned in customer comments, which helps to identify recurring themes. The resultant bigram network plot serves as a window into specific sentiments and feedback associated with a product, service, or overall experience. This dive into customer behavior and preferences equips brands with a heightened comprehension of their audience. Remarkably, each brand's bigram network prominently centers on pivotal terms like *customer*, *phone*, and *service*, among others. This focal point underscores that customers frequently invoke brand-associated products and services in their comments, affirming their relevance and resonance in customer discourse.
 
-```{r Plot16, out.width = '60%', echo = FALSE, fig.align="center", fig.cap = "Bigram network from Facebook dataset", fig.pos = "H"}
+```{r Plot16, out.width = '55%', echo = FALSE, fig.align="center", fig.cap = "Bigram network from Facebook dataset", fig.pos = "H"}
 knitr::include_graphics("plots/plot16.png")
 ```
 
 Furthermore, a specific examination of the bigram network \@ref(fig:Plot17) for the Amaysim brand underscores a predominant focus on the term 'Amaysim'. 
 
-```{r Plot17, out.width = '60%', echo = FALSE, fig.align="center", fig.cap = "Bigram network of Amaysim", fig.pos = "H"}
+```{r Plot17, out.width = '55%', echo = FALSE, fig.align="center", fig.cap = "Bigram network of Amaysim", fig.pos = "H"}
 knitr::include_graphics("plots/plot17.png")
 ```
 
 Within the Optus brand's bigram network \@ref(fig:Plot18), salient terms like *private* and *disappointing* emerge as central elements. This insight strongly suggests that customers frequently invoke the brand in their comments. Notably, the recurrent mention of *disappointing* in conjunction with *privacy* signals a noteworthy concern in customer feedback, warranting heightened attention from Optus in safeguarding customer information. 
 
-```{r Plot18, out.width = '60%', echo = FALSE, fig.align="center", fig.cap = "Bigram network of Optus", fig.pos = "H"}
+```{r Plot18, out.width = '55%', echo = FALSE, fig.align="center", fig.cap = "Bigram network of Optus", fig.pos = "H"}
 knitr::include_graphics("plots/plot18.png")
 ```
 
 Additionally, the bigram network \@ref(fig:Plot19) for Vodafone AU pinpoints notable attention on terms like *check*, *issue*, and *disruption*, indicating a potential area of improvement in signal quality for their future products. This bigram network is a valuable suggestion for Vodafone AU to enhance signal performance in forthcoming offerings, further bolstering customer satisfaction.
 
-```{r Plot19, out.width = '60%', echo = FALSE, fig.align="center", fig.cap = "Bigram network of Vodafone AU", fig.pos = "H"}
+```{r Plot19, out.width = '55%', echo = FALSE, fig.align="center", fig.cap = "Bigram network of Vodafone AU", fig.pos = "H"}
 knitr::include_graphics("plots/plot19.png")
 ```
 
@@ -323,7 +324,7 @@ knitr::include_graphics("plots/plot21.png")
 
 It is intriguing to note that Vodafone AU's customer comments \@ref(fig:Plot22) exhibit a slightly lower percentage of words expressing positive emotions compared to the other three brands, warranting further exploration.
 
-```{r Plot22, out.width = '40%', echo = FALSE, fig.align="center", fig.cap = "Donut plot of Vodafone AU", fig.pos = "H"}
+```{r Plot22, out.width = '45%', echo = FALSE, fig.align="center", fig.cap = "Donut plot of Vodafone AU", fig.pos = "H"}
 knitr::include_graphics("plots/plot22.png")
 ```
 
