@@ -25,9 +25,11 @@ library(kableExtra)
 
 # Abstract
 
-Contains aims, methods, data, findings
+This report aims to analyze social media data, especially for Facebook and Instagram, based on popular telecommunication brands: Telstra, Optus, Vodafone and Amaysim. With the data had been pulled directly from mentioned social media platforms by the team at Forethought, from April 2021 to August 2023. With the main business objective of "Understand the brands within the social media culture".
 
-This report
+The analysis involved methodologies from text-mining, sentiment analysis, word linkages, and OpenAI API Model. Each methodology is extensively explored to capture the essence of the data findings in corresponding to business and analytic objectives. The analysis mentioned progressively process through EDA and In-depth analysis from the bigger scope to narrow scope style.
+
+Findings ranges from trends, networks, overall summary and deep-dive summary as analysis goes. Overall, each brand proved to have different posting style, based on their brand images. As well as, each brand is differ in terms of themes which driven their posts' content and style. All of which could be used to further analyze and recommend for the client of the brand health and image in the upcoming and potential future project at Forethought.
 
 The access to this project GitHub is below.
 GitHub repository link : https://github.com/Forethought-Monash-Internship-2023
@@ -115,7 +117,7 @@ Introducing a new variable pertaining to brands within the themes of posts datas
 
 As mentioned earlier, these datasets comprise posts, comments, time stamps, and reactions from the four telecommunication brands Telstra, Optus, Vodafone, and Amaysim. They have been gathered at the start of the project, approximately in July, from April 2021, up to August 2023. While the original dataset pulled fresh from social media platform contain numerous variables, only the majority of them make sense for analysis purpose. Therefore, these are variables that would be included in both the data dictionary and analysis.
 
-These datasets contain character, numeric, and date-type variables. The datasets reside within the *clean_data* folder, where they are separated by 'Facebook' and 'Instagram' datasets, with further three files for the post, comments, and combined post-and-comment. Since each data file category is different, data dictionaries are separated by their post-comments and Facebook-Instagram files data_dict. Furthermore, data variables can also be seen within readme file as well.
+These datasets contain character, numeric, and date-type variables. The datasets reside within the *clean_data* folder, where they are separated by 'Facebook' and 'Instagram' datasets, with further three files for the post, comments, and combined post-and-comment. Since each data file category is different, data dictionaries are separated by their post-comments and Facebook-Instagram files data_dict.
 
 ```{r read_datadict, echo=FALSE, eval=TRUE}
 data_dict_FB_post <- read_excel("data_dict/data_dict_FB_post.xlsx")
@@ -345,18 +347,48 @@ knitr::include_graphics("plots/plot24.png")
 Additionally, there were instances of customers reporting information leakage concerns with calling cards, along with an influx of fraudulent text messages and calls. To proactively address this issue, the staff is taking commendable steps by providing a designated website for reporting scam SMS/calls, thereby empowering consumers to take action against potential scammers. This analysis underscores the imperative for the brand to redouble efforts in curbing all forms of scams and spam, thereby further elevating consumer satisfaction and trust.
 
 
-## Qualitative Findings
+## Qualitative Findings using NLP
 
 ### Themes
 
-Referring back to 5.1.5, where themes are shown in \@ref(fig:Plot14) and \@ref(fig:Plot15), each brand has its own set of themes that correspond to their posting style. These can be explored and analyzed further by understanding which themes brands would like to steer to. For example, Telstra focuses more on Product and Service updates and Technical Issues Resolution; while Optus focuses more on Promotions and Offers with a large amount of Sports Sponsorship and Events. These can help to see where brands want to be and how they would like to engage with their customers through these themes.
+Referring back to 5.1.5, where themes are shown in Figure \@ref(fig:Plot14) and Figure \@ref(fig:Plot15), each brand has its own set of themes that correspond to their posting style. These can be explored and analyzed further by understanding which themes brands would like to steer to. For example, Telstra focuses more on Product and Service updates and Technical Issues Resolution; while Optus focuses more on Promotions and Offers with a large amount of Sports Sponsorship and Events. These can help to see where brands want to be and how they would like to engage with their customers through these themes. Our prompt suggests to the API model to classify posts’ context based on relevancy for each theme from 0 to 100. Therefore, some post might have multiple relevance to the theme, which needs to be subjectively analyze based on context. 
 
-Furthermore, these themes can be explored further on the performance of each brand's themes in relationship with reactions, such as likes and comments number. 
+Thereafter, these themes can be explored further on the performance of each brand's themes in relationship with reactions, such as, in this case likes and reactions number order in a descending fashion. For example from Instagram, in Figure \@ref(fig:theme1) and Figure \@ref(fig:theme2) tables are top posts by number of likes from Telstra and Optus, respectively. For Telstra, Theme 2: Connectivity and Communication and Theme 1: Nostalgia and Pop Culture dominate as most likes’ interaction for Telstra. However, Optus has more diversity in terms of post style which generates top rank liked post. Still, their best posts are related to Theme of Support for Ambassadors and Athletes and Theme of Product and Service Promotions. VodafoneAU and Amaysim also diverse in themes as seen in table Figure \@ref(fig:theme3), while Amaysim focuses merely in Customer Appreciation Theme as seen in table Figure \@ref(fig:theme4). Moreover, based on different objective, either likes, views, shares and comments number can be ordered accordingly as well.
+
+```{r theme1, out.width = '55%', echo = FALSE, fig.align="center", fig.cap = "Telstra Instagram Themes", fig.pos = "H"}
+knitr::include_graphics("plots/theme1.png")
+```
+
+```{r theme2, out.width = '55%', echo = FALSE, fig.align="center", fig.cap = "Optus Instagram Themes", fig.pos = "H"}
+knitr::include_graphics("plots/theme2.png")
+```
+
+```{r theme3, out.width = '55%', echo = FALSE, fig.align="center", fig.cap = "Vodafone Instagram Themes", fig.pos = "H"}
+knitr::include_graphics("plots/theme3.png")
+```
+
+```{r theme4, out.width = '55%', echo = FALSE, fig.align="center", fig.cap = "Amaysim Instagram Themes", fig.pos = "H"}
+knitr::include_graphics("plots/theme4.png")
+```
+
+As for Facebook, the following figure of \@ref(fig:theme5), \@ref(fig:theme6), \@ref(fig:theme7); Telstra, VodafoneAU and Amaysim, respectively, can be explored as well. (Please note that, in this case, Optus top posts are all incorrectly pull from Facebook platform, making these top posts named as "No Caption", thus not included in this section). Similar conclusion can be drawn that Telstra is quite persistent with what's work in majority of their first and second themes. Whereas both Vodafone and Amaysim are in stage of exploration into different themes to find optimum ones.
+
+```{r theme5, out.width = '55%', echo = FALSE, fig.align="center", fig.cap = "Telstra Facebook Themes", fig.pos = "H"}
+knitr::include_graphics("plots/theme5.png")
+```
+
+```{r theme6, out.width = '55%', echo = FALSE, fig.align="center", fig.cap = "Vodafone Facebook Themes", fig.pos = "H"}
+knitr::include_graphics("plots/theme6.png")
+```
+
+```{r theme7, out.width = '55%', echo = FALSE, fig.align="center", fig.cap = "Amaysim Facebook Themes", fig.pos = "H"}
+knitr::include_graphics("plots/theme7.png")
+```
+
 
 ### Drivers
 
-Drivers refer to mutual themes of context for consumer comments, where their motives of writing or commenting is driven by certain motive, or driver in this case. Overall sentiment and a detailed sense of drivers on the holistic view of comments across each brand can be concluded and analyzed.
-
+Drivers refer to mutual themes of context for consumer comments, where their motives of writing or commenting are driven by certain motive, or driver in this case. Overall sentiment and a detailed sense of drivers on the holistic view of comments across each brand can be concluded and analyzed. Pre-set drivers of cost of plans, service, network, performance, and general expression could be used for API model to analyze. Also, further use API model to analyze comments based on mentioned drivers and explore the ratio of each brand's consumer drivers toward the overall post as well.
 
 ## Learning and Obstacles Discussion
 
@@ -399,6 +431,22 @@ The time-series plot unequivocally illustrates the profound impact of innovative
 Regarding sentiment and thematic analysis, it becomes evident that brands must maintain a vigilant watch on sentiment trends during content dissemination. Cultivating positive emotions within content not only bolsters customer engagement but also cultivates a more favorable brand perception. For telecom operators, striking a balance between customer-centric content and product/service updates emerges as a pivotal strategy. Focusing on customer appreciation, engagement, and loyalty fortifies satisfaction and retention while concurrently spotlighting product and service offerings ensures competitiveness within the market landscape.
 
 In response to the data stories generated from customer comments, brands can make some appropriate adjustments in terms of services, products, and technological offerings. The common concerns of customers, such as data roaming charges, information security, and fraudulent calls/texts, should be of concern to brands. By actively mitigating these pain points, brands can effectively elevate customer satisfaction and foster brand loyalty. Notably, for Vodafone AU, which registers a comparatively lower percentage of positive sentiment in customer comments, considering improving the signal quality of the product is a step that should be addressed in increasing customer positivity and satisfaction.
+
+Lastly, brands can explore their themes and drivers which contribute to their most liked and commented post. They could adjust accordingly while continuously keeping tap on their brand health via themes that they are trying to build while observing the evolution of drivers that would want to receive. Having this observation, Forethought could offer client with brand assistance and brand performance measurement on the monthly or quarterly basis.
+
+## Limitation
+Firstly, the data pulled from social media platforms are from specific time frame of two years, especially when API model is used to analyze, the amount of data trained and explored all counted toward the result. Meaning that should the time frame of the data has changed or more data is used into analysis, the result might be slightly altered. Therefore, progressively analyze the themes and drivers would keeping up with the brands upcoming and future trends
+
+Secondly, the current model of API model used is "gpt-3.5-turbo". Therefore, if different model is used or newer model could apply better NLP understanding to the dataset, result could be altered for better as well.
+
+Thirdly, As for drivers, since the complexity of drivers differ largely in both within the post itself and for the overall brand, drivers in this case are not match and would be extremely challenging to explore each post's drivers from consumer comments. Therefore, the general idea for drivers is provided for further exploration. 
+
+Additionally, some type of post are unable to be pulled correctly from the social media platform, hence, not all the post may be used into this analysis report, for data integrity reasons.
+
+Lastly, analysis on the qualitative insights are still largely subjective but professionally analyzed. Fine-tuning context of both post and comment needs judgement from the team, allowing only API model to handle would cause multiple mistakes along the way. Hence, please kindly note that different working team or stakeholder make take the analysis differently.
+
+## Future Usage
+As mentioned in Limitation and Result Highlights, this report provide a foundation for both client and agency side to identify where the brands are at and where or which way they can improve and steer towards. Since the data is only updated up to August 2023, new posts from then would already have appeared extensively. Hence, this report would serve as a framework for upcoming projects which require similar analysis methods, as well as pass brand health and image check.
 
 # References
 
